@@ -1,0 +1,31 @@
+<odoo>
+  <record id="view_coffee_machine_form" model="ir.ui.view">
+    <field name="name">coffee.machine.form</field>
+    <field name="model">coffee.machine</field>
+    <field name="arch" type="xml">
+      <form string="Coffee Machine">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="owner_id"/>
+            <field name="location"/>
+            <field name="invoice_file" filename="invoice_filename"/>
+            <field name="notes"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_coffee_machine_tree" model="ir.ui.view">
+    <field name="name">coffee.machine.tree</field>
+    <field name="model">coffee.machine</field>
+    <field name="arch" type="xml">
+      <tree string="Coffee Machines">
+        <field name="name"/>
+        <field name="owner_id"/>
+        <field name="location"/>
+      </tree>
+    </field>
+  </record>
+</odoo>

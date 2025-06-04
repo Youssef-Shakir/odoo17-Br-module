@@ -1,0 +1,33 @@
+<odoo>
+    <template id="portal_my_machines_page" name="My Machines">
+        <t t-call="portal.portal_layout">
+            <t t-set="title">My Coffee Machines</t>
+            <div class="container mt-4">
+                <h2>My Machines</h2>
+                <t t-if="machines">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Serial</th>
+                                <th>Location</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="machines" t-as="machine">
+                                <tr>
+                                    <td><a t-attf-href="/my/machine/{{ machine.id }}"><t t-esc="machine.name"/></a></td>
+                                    <td><t t-esc="machine.location"/></td>
+                                    <td><t t-esc="machine.notes"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-if="not machines">
+                    <p>No machines found.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>
