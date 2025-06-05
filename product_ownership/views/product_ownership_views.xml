@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_product_ownership_form" model="ir.ui.view">
+        <field name="name">product.ownership.form</field>
+        <field name="model">product.ownership</field>
+        <field name="arch" type="xml">
+            <form string="Product Ownership">
+                <group>
+                    <field name="product_id"/>
+                    <field name="owner_id"/>
+                    <field name="invoice_file" filename="invoice_filename"/>
+                    <field name="location"/>
+                    <field name="status"/>
+                    <field name="notes"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_product_ownership_tree" model="ir.ui.view">
+        <field name="name">product.ownership.tree</field>
+        <field name="model">product.ownership</field>
+        <field name="arch" type="xml">
+            <tree string="Product Ownership">
+                <field name="product_id"/>
+                <field name="owner_id"/>
+                <field name="status"/>
+                <field name="location"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_ownership" model="ir.actions.act_window">
+        <field name="name">Product Ownership</field>
+        <field name="res_model">product.ownership</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_product_ownership_root" name="Product Ownership"/>
+    <menuitem id="menu_product_ownership_main" name="Ownership Records"
+              parent="menu_product_ownership_root" action="action_product_ownership"/>
+</odoo>
